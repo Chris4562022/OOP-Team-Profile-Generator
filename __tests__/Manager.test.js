@@ -10,6 +10,11 @@ test('creates a new manager object',  () => {
     expect(manager.officenumber).toBe('2127360850');
 });
 
+test('test if you can get the employees role from GET ROLE()', () => {
+    const manager = new Manager;
+
+    expect(manager.getRole()).toEqual("Manager");
+});
 
 // test('test if you can get name from the getName() method', () => {
 //     expect(employee.getName()).toBe('Chris');

@@ -13,3 +13,9 @@ test('creates a new employee object',  () => {
 test('test if you can get name from the getName() method', () => {
     expect(employee.getName()).toBe('Chris');
 });
+
+test('test if you can get the employees role from GET ROLE()', () => {
+    const employee = new Employee;
+
+    expect(employee.getRole()).toEqual("Employee");
+});

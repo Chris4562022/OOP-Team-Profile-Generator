@@ -18,3 +18,10 @@ test('test if you can get github from githubusermame', () => {
     
     expect(engineer.githubusername).toEqual(expect.stringContaining(engineer.githubusername.toString()));
 });
+
+
+test('test if you can get the employees role from GET ROLE()', () => {
+    const engineer = new Engineer;
+
+    expect(engineer.getRole()).toEqual("Engineer");
+});

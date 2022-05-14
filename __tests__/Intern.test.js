@@ -16,3 +16,8 @@ test('test if you can get school from the getSchool()', () => {
     expect(intern.school).toEqual(expect.stringContaining(intern.school.toString()));
 });
 
+test('test if you can get the employees role from GET ROLE()', () => {
+    const intern = new Intern;
+
+    expect(intern.getRole()).toEqual("Intern");
+});

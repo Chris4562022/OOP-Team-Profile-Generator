@@ -1,20 +1,25 @@
 // node modules 
-const fs = require('fs'); 
 const inquirer = require("inquirer")
+const fs = require('fs'); 
+
 
 //promts to ask for manager and team member's names.
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 
+//create a user array for user input
 
-const addManager = () => {
+const init = () => {
 
     return inquirer.prompt([
         {
             type: 'input',
-            title: 'managername',
+            name: 'managername',
             message: 'What is the Team Managers Name? (Required)',
             validate: managernameInput => {
-                if (titleInput) {
+                if (managernameInput) {
                     return true;
                 } else {
                 console.log('Please enter the Team Managers Name!');
@@ -40,7 +45,7 @@ const addManager = () => {
         name: 'email',
         message: 'Please enter Managers email address. (Required)',
         validate: emailInput => {
-          if (emailInsInput) {
+          if (emailInput) {
             return true;
           } else {
             console.log('Please provide Managers email address!');
@@ -63,14 +68,15 @@ const addManager = () => {
       },
       {
         type: 'list',
-        name: 'license',
-        message: 'Please select which liscense that you have used for your project.',
-        choices: ['mit', 'isc', 'No-License'],
-        validate: licenseInput => {
-          if (licenseInput.data === 'No-License')
+        name: 'teammembers',
+        message: 'Please select if you would like to add and engineer or intern to your team.',
+        choices: ['engineer', 'intern', 'I am finished building my team'],
+        validate: teammembersInput => {
+          if (teammembersInput.data === 'I am finished building my team')
           return [];
-          if (licenseInput.data === 'isc')
-          return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)]'
+          else (teammembersInput.data == 'engineer')
+          console.log('Please enter your engineers Github username')
+          return = (engineerGithub);
         }
       },
       {
@@ -114,3 +120,6 @@ const addManager = () => {
       }
     ]);
 };
+
+//function call to initilize app
+init()
